@@ -2,6 +2,7 @@ from flask import Flask, request, jsonify
 from scrapper import get_data_from_url
 
 app = Flask(__name__)
+app.config['JSON_AS_ASCII'] = False
 
 @app.route('/scrape', methods=['GET', 'POST'])
 def scrape():
