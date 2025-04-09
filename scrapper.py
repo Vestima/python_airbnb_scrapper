@@ -29,12 +29,12 @@ def get_data_from_url(url):
 
         price_value = 'NaN'
         try:
-            price_value = price['details']['Total before taxes']
+            price_value = price['main']['discountedPrice']
         except Exception as e:
             pass
-
+    
         try:
-            price_value = price['main']['discountedPrice']
+            price_value = price['details']['Total before taxes']
         except Exception as e:
             pass
         price_value = price_value if price_value else 'NaN'
